@@ -6,22 +6,18 @@ import PackageDescription
 let package = Package(
     name: "Testing.swift",
     products: [
-        .library(
-            name: "Testing.swift",
-            targets: ["Testing.swift"]),
+        .library(name: "Inheritance", targets: ["Inheritance"]),
+        .library(name: "Instance", targets: ["Instance"]),
+        .library(name: "Protocol", targets: ["Protocol"]),
     ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
-        .target(
-            name: "Testing.swift",
-            dependencies: []),
-        .testTarget(
-            name: "Testing.swiftTests",
-            dependencies: ["Testing.swift"]),
+        .target(name: "Inheritance", dependencies: []),
+        .testTarget(name: "InheritanceTests", dependencies: ["Inheritance"]),
+        .target(name: "Instance", dependencies: []),
+        .testTarget(name: "InstanceTests", dependencies: ["Instance"]),
+        .target(name: "Protocol", dependencies: []),
+        .testTarget(name: "ProtocolTests", dependencies: ["Protocol"]),
     ]
 )
